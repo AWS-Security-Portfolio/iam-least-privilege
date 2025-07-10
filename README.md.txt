@@ -10,6 +10,7 @@ This project demonstrates the design and implementation of AWS Identity and Acce
 
 The architecture diagram can be found as 'diagram.png' in this repository.
 
+---
 
 ## Objectives
 
@@ -45,8 +46,6 @@ The architecture diagram can be found as 'diagram.png' in this repository.
 
 - **Policies:**  
   - Custom JSON policies attached to each user, group, or role.
-
-
 
 
 ---
