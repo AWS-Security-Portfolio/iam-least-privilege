@@ -8,9 +8,7 @@ This project demonstrates the design and implementation of AWS Identity and Acce
 
 ## Architecture Diagram
 
-The diagram below illustrates the main components and relationships in this IAM & Least Privilege lab.
-
-![aws-iamlab-sebastiansilva](diagram.png)
+The architecture diagram can be found as 'diagram.png' in this repository.
 
 
 ## Objectives
