@@ -1,4 +1,5 @@
 (AWS IAM & Least Privilege Lab)
+Designed granular IAM policies and role-based access for secure AWS resource isolation.
 
 ## Table of Contents
 
