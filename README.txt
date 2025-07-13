@@ -74,7 +74,7 @@ This project demonstrates the design and enforcement of AWS Identity and Access 
 
 ## Screenshots
 
-## Screenshots
+*All relevant screenshots demonstrating each step are included in the screenshots/ folder of this repository.
 
 | #  | File Name                          | What it Shows                                       |
 |----|------------------------------------|-----------------------------------------------------|
