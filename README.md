@@ -96,38 +96,27 @@ This project demonstrates the design and enforcement of AWS Identity and Access 
 
 ### Screenshot Explanations
 
-1. s3user-s3-allowed.png  
-   Proof that S3User can access S3 as permitted by the least-privilege policy.
+1. s3user-s3-allowed.png: Proof that S3User can access S3 as permitted by the least-privilege policy.
 
-2. s3user-ec2-denied.png
-   Shows S3User is denied access to EC2 resources, as intended.
+2. s3user-ec2-denied.png: Shows S3User is denied access to EC2 resources, as intended.
 
-3. ec2user-ec2-limited-success.png  
-   Demonstrates EC2User can access EC2 dashboard and perform limited actions.
+3. ec2user-ec2-limited-success.png: Demonstrates EC2User can access EC2 dashboard and perform limited actions.
 
-4. ec2user-s3-denied.png 
-   Shows EC2User is denied access to S3, enforcing separation of duties.
+4. ec2user-s3-denied.png: Shows EC2User is denied access to S3, enforcing separation of duties.
 
-5. ec2-instance-details.png  
-   Displays EC2 instance with attached IAM role and associated security group.
+5. ec2-instance-details.png: Displays EC2 instance with attached IAM role and associated security group.
 
-6. ec2-s3-access-denied.png 
-   Terminal output: EC2 instance (with role) is denied S3 access, validating least privilege.
+6. ec2-s3-access-denied.png: Terminal output: EC2 instance (with role) is denied S3 access, validating least privilege.
 
-7. ec2-security-group-mypionly.png  
-   Screenshot showing security group configured to allow SSH only from my IP address.
+7. ec2-security-group-mypionly.png:Screenshot showing security group configured to allow SSH only from my IP address.
 
-8. ec2-security-group-rules.png
-   Details of the inbound rules for the EC2 security group.
+8. ec2-security-group-rules.png: Details of the inbound rules for the EC2 security group.
 
-9. ec2-security-group-settings.png  
-   General configuration for the security group used in the lab.
+9. ec2-security-group-settings.png: General configuration for the security group used in the lab.
 
-10. denyuser-ec2-denied.png  
-    DenyUser receives “Access Denied” when attempting to access EC2 resources.
+10. denyuser-ec2-denied.png: DenyUser receives “Access Denied” when attempting to access EC2 resources.
 
-11. denyuser-s3-denied.png 
-    DenyUser receives “Access Denied” when attempting to access S3 resources.
+11. denyuser-s3-denied.png: DenyUser receives “Access Denied” when attempting to access S3 resources.
 
 ---
 
