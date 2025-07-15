@@ -29,7 +29,7 @@ This project demonstrates the design and enforcement of AWS Identity and Access 
 
 ## Diagram
 
-![AWS Security Lab – IAM & Least Privilege](aws-security-lab-iam-least-privilege.png)
+![AWS Security Lab – IAM & Least Privilege](diagram.png)
 
 ---
 
