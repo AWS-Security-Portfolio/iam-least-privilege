@@ -25,7 +25,7 @@ Designed granular IAM policies and role-based access for secure AWS resource iso
 
 This project demonstrates the design and enforcement of AWS Identity and Access Management (IAM) using the principle of least privilege. The lab covers the creation of IAM users, groups, roles, and custom JSON policies, as well as configuring EC2 instance roles and SSH/network access controls. The outcome is a securely segmented AWS environment, with documented evidence for each step.
 
-*A diagram of the IAM and resource relationships is included in the repository.
+![Lab Diagram](.diagram.png)
 
 ---
 
