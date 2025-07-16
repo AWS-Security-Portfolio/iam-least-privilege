@@ -7,6 +7,7 @@ Designed granular IAM policies and role-based access for secure AWS resource iso
 ## Table of Contents
 
 - [Overview]
+- [Diagram]
 - [Objectives]
 - [Steps Performed]
   - [1. Root Account and Admin Setup]
