@@ -7,6 +7,8 @@ Designed granular IAM policies and role-based access for secure AWS resource iso
 ## Table of Contents
 
 - [Overview]
+- [Real-World Risk]
+- [What I Built]
 - [Diagram]
 - [Objectives]
 - [Steps Performed]
@@ -16,6 +18,7 @@ Designed granular IAM policies and role-based access for secure AWS resource iso
   - [4. Security Group and Key Pair Creation]
   - [5. EC2 Launch and Role Attachment]
   - [6. Access Verification and Testing]
+  - [7. Cleanup]
 - [Screenshots]
 - [Lessons Learned]
 - [References]
@@ -25,6 +28,24 @@ Designed granular IAM policies and role-based access for secure AWS resource iso
 ## Overview
 
 This project demonstrates the design and enforcement of AWS Identity and Access Management (IAM) using the principle of least privilege. The lab covers the creation of IAM users, groups, roles, and custom JSON policies, as well as configuring EC2 instance roles and SSH/network access controls. The outcome is a securely segmented AWS environment, with documented evidence for each step.
+
+---
+
+## Real-World Risk
+
+A common risk in cloud environments is granting excessive permissions to users, applications or compute resources. Without granular IAM controls and the principle of least privilege, a compromised set of credentials—such as those belonging to a developer or an EC2 instance—could be exploited to access or manipulate sensitive resources across the AWS account. This increases the likelihood of data breaches, accidental resource deletion and lateral movement by attackers. By tightly scoping IAM policies and roles, the lab demonstrates how to reduce the impact of credential compromise and enforce security boundaries within AWS.
+
+---
+
+## What I Built
+
+- Provisioned AWS IAM users for distinct roles (S3, EC2, and Deny).
+- Authored and attached custom JSON policies enforcing least privilege for each user.
+- Created IAM groups and an EC2 instance role to manage permissions at scale.
+- Configured an EC2 instance with a secure key pair and a restrictive security group.
+- Attached the EC2 instance to an IAM role with scoped S3 access for testing.
+- Verified user and role permissions in the AWS Console and CLI, capturing evidence of both successful access and denied actions.
+- Documented the architecture and testing process with screenshots and a summary diagram.
 
 ---
 
@@ -75,6 +96,13 @@ This project demonstrates the design and enforcement of AWS Identity and Access 
    - Tested S3 access from the instance to confirm least privilege.  
    - Collected screenshots as evidence for each stage.
 
+7. Cleanup
+   - Terminated all test EC2 instances used in the lab.
+   - Deleted unused IAM users, roles, and groups to reduce attack surface.
+   - Removed custom IAM policies no longer required.
+   - Deleted security groups and key pairs created for testing.
+   - Reviewed the AWS account for any residual resources left by the lab.
+   
 ---
 
 ## Screenshots
