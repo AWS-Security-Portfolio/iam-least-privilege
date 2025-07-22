@@ -12,10 +12,10 @@ Designed granular IAM policies and role-based access for secure AWS resource iso
 - [Diagram]
 - [Objectives]
 - [Steps Performed]
-  - [1. IAM User Creation and Policy Attachment]
+  - [1. IAM User and Policy Setup]
   - [2. Security Group Configuration]
   - [3. EC2 Instance Deployment]
-  - [4. Access Testing and Validation]
+  - [4. Access Testing]
   - [5. Cleanup]
 - [Screenshots]
 - [Lessons Learned]
@@ -67,28 +67,33 @@ A common risk in cloud environments is granting excessive permissions to users, 
 
 ## Steps Performed
 
-1. IAM User Creation and Policy Attachment
-   - Created three IAM users: S3User, EC2User and DenyUser for resource isolation. (Screenshots: s3user-ec2-denied.png, s3user-s3-allowed.png, ec2user-ec2-limited-success.png, denyuser-ec2-denied.png & denyuser-s3-denied.png)
-   - Authored and attached least-privilege JSON policies:
-      - S3User: S3 access only
-      - EC2User: EC2 access only
-      - DenyUser: No permissions
+1. IAM User and Policy Setup
+   - Created IAM users: S3User, EC2User & DenyUser.
+   - Authored and attached least-privilege policies for each user.
 
 2. Security Group Configuration
-   - Created and configured a Security Group to restrict SSH access to EC2 instances from my IP only (Screenshots: ec2-security-group-mypionly.png, ec2-security-group-settings.png & ec2-security-group-rules.png)
+   - Created a Security Group allowing SSH only from my IP (Screenshot: ec2-security-group-mypionly.png)
+   - Verified and documented security group settings (Screenshot: ec2-security-group-settings.png)
+   - Reviewed security group inbound rules for accuracy (Screenshot: ec2-security-group-rules.png)
 
 3. EC2 Instance Deployment
-Launched an EC2 instance with the secure security group and attached IAM role for S3/EC2 testing (Screenshot: ec2-instance-details.png)
+   - Launched an EC2 instance with the configured security group and attached IAM role (Screenshot: ec2-instance-details.png)
 
-4. Access Testing and Validation
-   - Verified user and role permissions in the AWS Console and CLI:
-      - S3User: Confirmed S3 access allowed, EC2 access denied (Screenshots: s3user-s3-allowed.png & s3user-ec2-denied.png)
-      - EC2User: Confirmed EC2 access allowed, S3 access denied (Screenshots: ec2user-ec2-limited-success.png & ec2user-s3-denied.png)
-      - DenyUser: Confirmed both S3 and EC2 actions denied (Screenshots: denyuser-ec2-denied.png & denyuser-s3-denied.png)
-      - EC2 instance: Validated S3 access via role, captured access denied when policies restricted access (Screenshot: ec2-s3-access-denied.png)
+4. Access Testing
+   - EC2User:
+     - Successfully performed EC2 actions (Screenshot: ec2user-ec2-limited-success.png)
+     - Denied S3 actions (Screenshot: ec2user-s3-denied.png)
+   - S3User:
+     - Successfully performed S3 actions (Screenshot: s3user-s3-allowed.png)
+     - Denied EC2 actions (Screenshot: s3user-ec2-denied.png)
+   - DenyUser:
+     - Denied EC2 actions (Screenshot: denyuser-ec2-denied.png)
+     - Denied S3 actions (Screenshot: denyuser-s3-denied.png)
+   - EC2 Instance Role:
+     - Tested S3 access from the EC2 instance (denied as per policy)(Screenshot: ec2-s3-access-denied.png)
 
 5. Cleanup
-   - Terminated test EC2 instance(s) and removed custom IAM users, roles, policies and security groups to avoid ongoing costs and maintain a clean AWS environment.
+   - Deleted test users, policies, security groups and EC2 instances to avoid charges and maintain a clean AWS environment.
    
 ---
 
