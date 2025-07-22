@@ -12,13 +12,11 @@ Designed granular IAM policies and role-based access for secure AWS resource iso
 - [Diagram]
 - [Objectives]
 - [Steps Performed]
-  - [1. Root Account and Admin Setup]
-  - [2. IAM Users, Groups, and Roles]
-  - [3. Policy Authoring and Attachment]
-  - [4. Security Group and Key Pair Creation]
-  - [5. EC2 Launch and Role Attachment]
-  - [6. Access Verification and Testing]
-  - [7. Cleanup]
+  - [1. IAM User Creation and Policy Attachment]
+  - [2. Security Group Configuration]
+  - [3. EC2 Instance Deployment]
+  - [4. Access Testing and Validation]
+  - [5. Cleanup]
 - [Screenshots]
 - [Lessons Learned]
 - [References]
@@ -69,39 +67,28 @@ A common risk in cloud environments is granting excessive permissions to users, 
 
 ## Steps Performed
 
-1. Root Account and Admin Setup  
-   - Enabled MFA on the AWS root account.  
-   - Created a new admin IAM user with AdministratorAccess policy.
+1. IAM User Creation and Policy Attachment
+   - Created three IAM users: S3User, EC2User and DenyUser for resource isolation. (Screenshots: s3user-ec2-denied.png, s3user-s3-allowed.png, ec2user-ec2-limited-success.png, denyuser-ec2-denied.png & denyuser-s3-denied.png)
+   - Authored and attached least-privilege JSON policies:
+      - S3User: S3 access only
+      - EC2User: EC2 access only
+      - DenyUser: No permissions
 
-2. IAM Users, Groups, and Roles.  
-   - Created 'S3User', 'EC2User' and 'DenyUser'.  
-   - Created IAM groups for S3 and EC2 access (Optional) 
-   - Created an IAM role for EC2 (with S3 permissions)
+2. Security Group Configuration
+   - Created and configured a Security Group to restrict SSH access to EC2 instances from my IP only (Screenshots: ec2-security-group-mypionly.png, ec2-security-group-settings.png & ec2-security-group-rules.png)
 
-3. Policy Authoring and Attachment  
-   - Authored custom JSON policies for S3, EC2, and deny access.  
-   - Attached policies to the appropriate users, groups, and role.
+3. EC2 Instance Deployment
+Launched an EC2 instance with the secure security group and attached IAM role for S3/EC2 testing (Screenshot: ec2-instance-details.png)
 
-4. Security Group and Key Pair Creation  
-   - Created a security group allowing SSH from a specific IP.  
-   - Generated an EC2 key pair for secure SSH access.
+4. Access Testing and Validation
+   - Verified user and role permissions in the AWS Console and CLI:
+      - S3User: Confirmed S3 access allowed, EC2 access denied (Screenshots: s3user-s3-allowed.png & s3user-ec2-denied.png)
+      - EC2User: Confirmed EC2 access allowed, S3 access denied (Screenshots: ec2user-ec2-limited-success.png & ec2user-s3-denied.png)
+      - DenyUser: Confirmed both S3 and EC2 actions denied (Screenshots: denyuser-ec2-denied.png & denyuser-s3-denied.png)
+      - EC2 instance: Validated S3 access via role, captured access denied when policies restricted access (Screenshot: ec2-s3-access-denied.png)
 
-5. EC2 Launch and Role Attachment  
-   - Launched a new EC2 instance using Amazon Linux.  
-   - Attached the IAM role and security group to the instance.
-
-6. Access Verification and Testing  
-   - Verified IAM user permissions via the AWS Console.  
-   - Connected to the EC2 instance via SSH.  
-   - Tested S3 access from the instance to confirm least privilege.  
-   - Collected screenshots as evidence for each stage.
-
-7. Cleanup
-   - Terminated all test EC2 instances used in the lab.
-   - Deleted unused IAM users, roles, and groups to reduce attack surface.
-   - Removed custom IAM policies no longer required.
-   - Deleted security groups and key pairs created for testing.
-   - Reviewed the AWS account for any residual resources left by the lab.
+5. Cleanup
+   - Terminated test EC2 instance(s) and removed custom IAM users, roles, policies and security groups to avoid ongoing costs and maintain a clean AWS environment.
    
 ---
 
@@ -122,30 +109,6 @@ A common risk in cloud environments is granting excessive permissions to users, 
 | 9  | ec2-security-group-settings.png    | General security group configuration                |
 | 10 | denyuser-ec2-denied.png            | DenyUser denied when trying to access EC2           |
 | 11 | denyuser-s3-denied.png             | DenyUser denied when trying to access S3            |
-
-### Screenshot Explanations
-
-1. s3user-s3-allowed.png: Proof that S3User can access S3 as permitted by the least-privilege policy.
-
-2. s3user-ec2-denied.png: Shows S3User is denied access to EC2 resources, as intended.
-
-3. ec2user-ec2-limited-success.png: Demonstrates EC2User can access EC2 dashboard and perform limited actions.
-
-4. ec2user-s3-denied.png: Shows EC2User is denied access to S3, enforcing separation of duties.
-
-5. ec2-instance-details.png: Displays EC2 instance with attached IAM role and associated security group.
-
-6. ec2-s3-access-denied.png: Terminal output: EC2 instance (with role) is denied S3 access, validating least privilege.
-
-7. ec2-security-group-mypionly.png:Screenshot showing security group configured to allow SSH only from my IP address.
-
-8. ec2-security-group-rules.png: Details of the inbound rules for the EC2 security group.
-
-9. ec2-security-group-settings.png: General configuration for the security group used in the lab.
-
-10. denyuser-ec2-denied.png: DenyUser receives “Access Denied” when attempting to access EC2 resources.
-
-11. denyuser-s3-denied.png: DenyUser receives “Access Denied” when attempting to access S3 resources.
 
 ---
 
