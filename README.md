@@ -129,14 +129,9 @@ A common risk in cloud environments is granting excessive permissions to users, 
 
 ## References
 
-- AWS IAM Documentation  
-  (https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
-
-- AWS EC2 Documentation  
-  (https://docs.aws.amazon.com/ec2/)
-
-- AWS Security Best Practices  
-  (https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-fsbp.html)
+- [AWS IAM Documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html)
+- [AWS EC2 Documentation]  (https://docs.aws.amazon.com/ec2/)
+- [AWS Security Best Practices]  (https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-fsbp.html)
 
 ---
 
