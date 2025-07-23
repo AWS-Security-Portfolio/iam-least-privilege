@@ -99,7 +99,7 @@ A common risk in cloud environments is granting excessive permissions to users, 
 
 ## Screenshots
 
-*All relevant screenshots demonstrating each step are included in the screenshots/ folder of this repository.
+*All screenshots are included in the screenshots/ folder of this repository.*
 
 | #  | File Name                          | What it Shows                                       |
 |----|------------------------------------|-----------------------------------------------------|
