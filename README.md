@@ -135,4 +135,6 @@ A common risk in cloud environments is granting excessive permissions to users, 
 
 ---
 
-Sebastian Silva C. – July, 2025 – Berlin, Germany.
+Sebastian Silva C. – July 2025 – Berlin, Germany.
+- [LinkedIn](https://www.linkedin.com/in/sebastiansilc/)
+- [GitHub](https://github.com/SebaSilC)
