@@ -6,20 +6,20 @@ Designed granular IAM policies and role-based access for secure AWS resource iso
 
 ## Table of Contents
 
-- [Overview]
-- [Real-World Risk]
-- [What I Built]
-- [Diagram]
-- [Objectives]
-- [Steps Performed]
+- [Overview](#overview)
+- [Real-World Risk](#real-world-risk)
+- [What I Built](#what-i-built)
+- [Diagram](#diagram)
+- [Objectives](#objectives)
+- [Steps Performed](#steps-performed)
   - [1. IAM User and Policy Setup]
   - [2. Security Group Configuration]
   - [3. EC2 Instance Deployment]
   - [4. Access Testing]
   - [5. Cleanup]
-- [Screenshots]
-- [Lessons Learned]
-- [References]
+- [Screenshots](#screenshots)
+- [Lessons Learned](#lessons-learned)
+- [References](#references)
 
 ---
 
