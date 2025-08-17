@@ -100,7 +100,7 @@ A common risk in cloud environments is granting excessive permissions to users, 
 
 ## Screenshots
 
-*All screenshots are included in the screenshots/ folder of this repository.*
+*All screenshots are included in the `screenshots/` folder of this repository.*
 
 | #  | File Name                          | What it Shows                                       |
 |----|------------------------------------|-----------------------------------------------------|
@@ -140,4 +140,5 @@ A common risk in cloud environments is granting excessive permissions to users, 
 
 Sebastian Silva C. – July, 2025 – Berlin, Germany.  
 [LinkedIn](https://www.linkedin.com/in/sebastiansilc) | [GitHub](https://github.com/SebaSilC) | [sebastian@playbookvisualarts.com](mailto:sebastian@playbookvisualarts.com)
+
 
